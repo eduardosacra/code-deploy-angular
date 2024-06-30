@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href /code-deploy-angular/ --output-path=docs/ --deploy-url /code-deploy-angular/ && npm run postbuild",
+    "postbuild": "mv docs/browser/* docs/ && rm -rf docs/browser",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
